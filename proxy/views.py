@@ -9,6 +9,6 @@ def index(request):
     print(proxy)
     proxies = { "http" : proxy }
     r = requests.get(url, proxies = proxies)
-    print(r.content)
-    return HttpResponse(r.content)
+    text = r.text.encode('utf-8')
+    return HttpResponse(text)
 
